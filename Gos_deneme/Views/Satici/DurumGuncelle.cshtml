@@ -1,0 +1,33 @@
+﻿@model Gos_deneme.Models.Siparisler
+@{
+    Layout = "~/Views/Shared/_LayoutSatici.cshtml";
+    ViewData["Title"] = "Sipariş Durumu Güncelle";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-warning text-dark">
+            <h4>📦 Sipariş Durumu Güncelle</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="DurumGuncelle" method="post">
+                <input type="hidden" name="SiparisID" value="@Model.SiparisID" />
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Ürün Adı</label>
+                    <input type="text" class="form-control" value="@Model.UrunAdi" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Sipariş Durumu</label>
+                    <select class="form-select" name="SiparisDurum" required>
+                        <option selected value="Kargoya Verildi">Kargoya Verildi</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Güncelle</button>
+                <a asp-action="Siparislerim" class="btn btn-secondary ms-2">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>

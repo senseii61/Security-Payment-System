@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Satıcı Paneli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- ÜST MENÜ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Satici/Index">Satıcı Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSat" aria-controls="navbarSat" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSat">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Satici/Index">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Satici/SiparisOlustur">Sipariş Oluştur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Satici/Siparislerim">Siparişlerim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/Auth/CikisYap">Çıkış</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ANA İÇERİK -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <!-- ALT BİLGİ -->
+    <footer class="text-center text-muted mt-5 p-3 border-top">
+        <small>&copy; 2025 - Güvenli Ödeme Sistemi | Satıcı Paneli</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

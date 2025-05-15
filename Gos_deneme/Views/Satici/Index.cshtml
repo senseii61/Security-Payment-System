@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutSatici.cshtml";
+    ViewData["Title"] = "Satıcı Paneli";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center mb-4">
+            <h2 class="fw-bold">👋 Hoş Geldiniz, Satıcı Paneline Giriş Yaptınız</h2>
+            <p class="text-muted">Siparişlerinizi yönetin, yeni siparişler oluşturun ve durum güncellemeleri yapın.</p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card border-primary shadow h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📝 Yeni Sipariş Oluştur</h5>
+                    <p class="card-text">Yeni bir müşteri için sipariş girişi yapın.</p>
+                    <a href="@Url.Action("SiparisOlustur", "Satici")" class="btn btn-primary">Sipariş Oluştur</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-success shadow h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">📋 Siparişlerim</h5>
+                    <p class="card-text">Daha önce oluşturduğunuz siparişleri görüntüleyin.</p>
+                    <a href="@Url.Action("Siparislerim", "Satici")" class="btn btn-success">Siparişlerim</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-warning shadow h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">⚙️ Durum Güncelle</h5>
+                    <p class="card-text">Sipariş durumlarını "Kargoya Verildi" olarak güncelleyin.</p>
+                    <a href="@Url.Action("Siparislerim", "Satici")" class="btn btn-warning">Durum Güncelle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

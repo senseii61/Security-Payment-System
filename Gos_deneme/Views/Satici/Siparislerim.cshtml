@@ -1,0 +1,51 @@
+﻿@model List<Gos_deneme.Models.Siparisler>
+@{
+    Layout = "~/Views/Shared/_LayoutSatici.cshtml";
+    ViewData["Title"] = "Oluşturduğum Siparişler";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📦 Oluşturduğum Siparişler</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">Henüz sipariş oluşturulmamış.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Ürün</th>
+                        <th>Müşteri ID</th> @* Alternatif: ViewModel ile ad-soyad gösterilebilir *@
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                        <th>Ödeme Durumu</th>
+                        <th>Tutar (₺)</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in Model)
+                    {
+                        <tr>
+                            <td>@s.SiparisID</td>
+                            <td>@s.UrunAdi</td>
+                            <td>@s.MusteriID</td>
+                            <td>@s.SiparisTarih.ToString("dd.MM.yyyy")</td>
+                            <td>@s.SiparisDurum</td>
+                            <td>@s.OdemeDurumu</td>
+                            <td>@(s.OdemeTutar.HasValue ? s.OdemeTutar.Value.ToString("0.00") : "-")</td>
+
+                            <td>
+                                <a href="@Url.Action("DurumGuncelle", "Satici", new { id = s.SiparisID })" class="btn btn-sm btn-warning">Durum Güncelle</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

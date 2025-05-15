@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Müşteri Paneli</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- ÜST MENÜ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/Musteri/Index">Müşteri Paneli</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Musteri/Index">Siparişlerim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Musteri/OdemeBekleyenler">Ödeme Bekleyenler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Profil/Duzenle">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="/Auth/CikisYap">Çıkış</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ANA İÇERİK -->
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <!-- ALT BİLGİ -->
+    <footer class="text-center text-muted mt-5 p-3 border-top">
+        <small>&copy; 2025 - Güvenli Ödeme Sistemi</small>
+    </footer>
+</body>
+</html>
+

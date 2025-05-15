@@ -1,0 +1,41 @@
+﻿@model dynamic
+@{
+    Layout = "~/Views/Shared/_LayoutMusteri.cshtml";
+    ViewData["Title"] = "Sipariş Detayı";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">📄 Sipariş Detayları</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Sipariş ID</dt>
+                <dd class="col-sm-9">@Model.Siparis.SiparisID</dd>
+
+                <dt class="col-sm-3">Sipariş Tarihi</dt>
+                <dd class="col-sm-9">@Model.Siparis.SiparisTarih.ToString("dd.MM.yyyy")</dd>
+
+                <dt class="col-sm-3">Durum</dt>
+                <dd class="col-sm-9">@Model.Siparis.SiparisDurum</dd>
+
+                <dt class="col-sm-3">Ödeme Tutarı</dt>
+                <dd class="col-sm-9">@Model.OdemeTutar ₺</dd>
+
+                <dt class="col-sm-3">Ödeme Durumu</dt>
+                <dd class="col-sm-9">
+                    @if (Model.OdemeDurumu == "Ödendi")
+                    {
+                        <span class="badge bg-success">Ödendi</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning text-dark">Bekliyor</span>
+                    }
+                </dd>
+            </dl>
+            <a href="@Url.Action("Index", "Musteri")" class="btn btn-secondary">← Geri Dön</a>
+        </div>
+    </div>
+</div>

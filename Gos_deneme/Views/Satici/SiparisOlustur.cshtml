@@ -1,0 +1,55 @@
+﻿@model Gos_deneme.Models.Siparisler
+@{
+    Layout = "~/Views/Shared/_LayoutSatici.cshtml";
+    ViewData["Title"] = "Sipariş Oluştur";
+}
+
+<div class="container mt-5">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h4>📝 Yeni Sipariş Oluştur</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="SiparisOlustur" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Ürün İsmi</label>
+                    <input type="text" name="UrunAdi" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="OdemeTutar" class="control-label">Ödeme Tutarı</label>
+                    <input asp-for="OdemeTutar" class="form-control" />
+                    <span asp-validation-for="OdemeTutar" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Kullanıcı E-Posta</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Sipariş Tarihi</label>
+                    <input type="date" name="SiparisTarih" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Sipariş Durumu</label>
+                    <select name="SiparisDurum" class="form-select" required>
+                        
+                        <option value="Hazırlanıyor">Hazırlanıyor</option>
+                        <option value="Kargoya Verildi">Kargoya Verildi</option>
+                        <option value="Tamamlandı">Tamamlandı</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ödeme Durumu</label>
+                    <select name="OdemeDurumu" class="form-select" required>
+                        <option value="Ödeme Bekleniyor">Ödeme Bekleniyor</option>
+                     </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

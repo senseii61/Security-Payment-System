@@ -1,0 +1,52 @@
+﻿@model Gos_deneme.Models.Kullaniciler
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Kayıt Ol";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white text-center">
+                    <h4>Kayıt Ol</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label asp-for="KullaniciAdi" class="form-label">Kullanıcı Adı</label>
+                            <input asp-for="KullaniciAdi" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" type="email" required />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label">Şifre</label>
+                            <input asp-for="Password" class="form-control" type="password" required />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Ad" class="form-label">Ad</label>
+                            <input asp-for="Ad" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Soyad" class="form-label">Soyad</label>
+                            <input asp-for="Soyad" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Rol" class="form-label">Rol Seçiniz</label>
+                            <select asp-for="Rol" class="form-select" required>
+                                <option value="Musteri">Müşteri</option>
+                                <option value="Satici">Satıcı</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+                    </form>
+                    <hr />
+                    <div class="text-center">
+                        <a href="/Auth/GirisYap">Zaten hesabınız var mı? Giriş yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model List<Gos_deneme.Models.Siparisler>
+@{
+    Layout = "~/Views/Shared/_LayoutMusteri.cshtml";
+    ViewData["Title"] = "Siparişlerim";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📦 Siparişlerim</h2>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">Hiç siparişiniz bulunmamaktadır.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Sipariş Tarihi</th>
+                        <th scope="col">Durum</th>
+                        <th scope="col">Detay</th> <!-- Yeni sütun -->
+   
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var s in Model)
+                    {
+                        <tr>
+                            <th>@s.SiparisID</th>
+                            <td>@s.SiparisTarih.ToString("dd.MM.yyyy")</td>
+                            <td>@s.SiparisDurum</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

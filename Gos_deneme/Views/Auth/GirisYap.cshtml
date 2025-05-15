@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Giriş Yap";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white text-center">
+                    <h4>Giriş Yap</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email adresi</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="ornek@mail.com" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="sifre" class="form-label">Şifre</label>
+                            <input type="password" class="form-control" id="sifre" name="sifre" placeholder="••••••" required />
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Giriş Yap</button>
+                        <p class="text-danger mt-2">@ViewBag.Mesaj</p>
+                    </form>
+                    <hr />
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("SifremiUnuttum", "Auth")">Şifremi Unuttum?</a>
+                    </div>
+                    <div class="text-center">
+                        <a href="/Auth/KayitOl">Hesabınız yok mu? Kayıt olun</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
